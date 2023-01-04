@@ -28,10 +28,32 @@ const ProductsSchema = mongoose.Schema({
     trim: true,
   },
 
+  generationOrSeries: {
+    type: String,
+    trim: true,
+  },
+  processorFrequency: {
+    min: Number,
+    max: Number,
+  },
+  processorCore: Number,
+  processTread: Number,
+  cupCache: Number,
+
+  // Chipset
+  chipsetModel: String,
+
+  // Display
+
+  displaySize: Number,
+  displayResolution: String,
+  // DisplayFeatures:
+
   // Ram section
   ram: String,
   ramType: String,
   busSpeed: String,
+  // Storage Section
   storageType: String,
   storageCapacity: String,
 });
