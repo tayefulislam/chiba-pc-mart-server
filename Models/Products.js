@@ -6,17 +6,23 @@ const ProductsSchema = mongoose.Schema({
     unique: true,
     required: true,
   },
+
   productType: {
     type: String,
     required: true,
     trim: true,
   },
+
   title: {
     type: String,
     trim: true,
     required: true,
   },
   brand: String,
+  status: {
+    type: String,
+    enum: ["in-stock", "stock-out", "pre-order", "discontinued"],
+  },
   description: {
     type: String,
     trim: true,
@@ -24,6 +30,15 @@ const ProductsSchema = mongoose.Schema({
 
   discountPrice: Number,
   regularPrice: Number,
+
+  // Images
+
+  imageURLs: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
 
   // Processor Section
   processorType: {
@@ -58,14 +73,18 @@ const ProductsSchema = mongoose.Schema({
   // DisplayFeatures:
 
   // Ram section
+
   ram: Number,
   ramType: String,
   busSpeed: String,
+
   // Storage Section
+
   storageType: String,
   storageCapacity: String,
   hddRPM: String,
   extraM2Slot: String,
+
   // Graphics
 
   graphicsModel: {
@@ -180,3 +199,7 @@ const ProductsSchema = mongoose.Schema({
     trim: true,
   },
 });
+
+const Products = mongoose.model("products", ProductsSchema, "products");
+
+module.exports = Products;
