@@ -4,53 +4,51 @@ const ProductsSchema = mongoose.Schema({
   productId: {
     type: String,
     unique: true,
-    required: true,
   },
-
   productType: {
     type: String,
-    required: true,
+
     trim: true,
   },
-
   title: {
     type: String,
     trim: true,
-    required: true,
   },
   brand: String,
+  quantity: {
+    type: Number,
+    min: 0,
+  },
+  unit: {
+    type: String,
+    enum: ["pcs", "kg"],
+  },
   status: {
     type: String,
-    enum: ["in-stock", "stock-out", "pre-order", "discontinued"],
+    enum: ["in-stock", "out-of-stock", "pre-order", "discontinued"],
   },
   description: {
     type: String,
     trim: true,
   },
-
   discountPrice: Number,
   regularPrice: Number,
-
   // Images
-
   imageURLs: [
     {
       type: String,
       required: true,
     },
   ],
-
   // Processor Section
   processorType: {
     type: String,
     trim: true,
   },
-
   processorModel: {
     type: String,
     trim: true,
   },
-
   generationOrSeries: {
     type: String,
     trim: true,
@@ -62,31 +60,22 @@ const ProductsSchema = mongoose.Schema({
   processorCore: Number,
   processTread: Number,
   cupCache: Number,
-
-  // Chipset
+  // // Chipset
   chipsetModel: String,
-
-  // Display
-
+  // // Display
   displaySize: Number,
   displayResolution: String,
-  // DisplayFeatures:
-
-  // Ram section
-
+  // // DisplayFeatures:
+  // // Ram section
   ram: Number,
   ramType: String,
   busSpeed: String,
-
   // Storage Section
-
   storageType: String,
   storageCapacity: String,
   hddRPM: String,
   extraM2Slot: String,
-
-  // Graphics
-
+  // // Graphics
   graphicsModel: {
     type: String,
     trim: true,
@@ -95,21 +84,17 @@ const ProductsSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
-  // KeyBoard & Touch Pad
-
+  // // KeyBoard & Touch Pad
   keyboardType: {
     type: String,
     trim: true,
   },
-
-  touchPad: Boolean,
-  // Camera and Audio
-
+  // touchPad: Boolean,
+  // // Camera and Audio
   webcam: {
     type: String,
     trim: true,
   },
-
   speaker: {
     type: String,
     trim: true,
@@ -118,9 +103,7 @@ const ProductsSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
-
-  // Port & Slots
-
+  // // Port & Slots
   opticalDrive: {
     type: String,
     trim: true,
@@ -141,59 +124,47 @@ const ProductsSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
-
   headPhone_MicroPhonePort: {
     type: String,
     trim: true,
   },
-
-  // Network and Connectivity
-
+  // // Network and Connectivity
   LAN: String,
   Wifi: {
     type: String,
     trim: true,
   },
   bluetooth: Number,
-
-  // Security
-
+  // // Security
   fingerprintSensor: Boolean,
-  // Software
-
+  // // Software
   Os: {
     type: String,
     trim: true,
   },
-
-  //Power
-
+  // //Power #problem 1
   batteryType: {
-    string: String,
+    type: String,
     trim: true,
   },
+
   batteryCapacity: Number,
   backupTime: {
     type: String,
     trim: true,
   },
-
   adapterType: {
     type: String,
     trim: true,
   },
-
-  // Physical Specification
-
+  // // Physical Specification
   color: String,
   dimensions: {
     type: String,
     trim: true,
   },
   weight: Number,
-
-  // Warranty
-
+  // // Warranty
   warrantyDetails: {
     type: String,
     trim: true,
