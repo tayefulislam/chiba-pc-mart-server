@@ -7,7 +7,11 @@ const ProductsSchema = mongoose.Schema({
   },
   productType: {
     type: String,
+    trim: true,
+  },
 
+  url: {
+    type: String,
     trim: true,
   },
   title: {
@@ -34,14 +38,29 @@ const ProductsSchema = mongoose.Schema({
   discountPrice: Number,
   regularPrice: Number,
   // Images
-  imageURLs: [
-    {
-      type: String,
-      required: true,
-    },
-  ],
+
+  image1: {
+    type: String,
+    trim: true,
+  },
+
+  image2: {
+    type: String,
+    trim: true,
+  },
+
+  image3: {
+    type: String,
+    trim: true,
+  },
+
+  image4: {
+    type: String,
+    trim: true,
+  },
+
   // Processor Section
-  processorType: {
+  processorBrand: {
     type: String,
     trim: true,
   },
@@ -49,32 +68,39 @@ const ProductsSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
-  generationOrSeries: {
+  generationOrSeries: String,
+  processorFrequencyMin: Number,
+
+  processorFrequencyMax: Number,
+  processorCore: Number,
+  processTread: Number,
+  cupCache: {
     type: String,
     trim: true,
   },
-  processorFrequency: {
-    min: Number,
-    max: Number,
-  },
-  processorCore: Number,
-  processTread: Number,
-  cupCache: Number,
   // // Chipset
   chipsetModel: String,
   // // Display
   displaySize: Number,
   displayResolution: String,
-  // // DisplayFeatures:
+  displayFeatures: {
+    type: String,
+    trim: true,
+  },
   // // Ram section
-  ram: Number,
+  ram: String,
   ramType: String,
   busSpeed: String,
+  maxRAMCapacity: String,
+  ramRemovable: String,
+  totalRAMSlot: String,
   // Storage Section
   storageType: String,
   storageCapacity: String,
   hddRPM: String,
   extraM2Slot: String,
+  supportedSSDType: String,
+
   // // Graphics
   graphicsModel: {
     type: String,
@@ -89,7 +115,15 @@ const ProductsSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
-  // touchPad: Boolean,
+  keyboardFeatures: {
+    type: String,
+    trim: true,
+  },
+  touchPad: String,
+  touchPadFeatures: {
+    type: String,
+    trim: true,
+  },
   // // Camera and Audio
   webcam: {
     type: String,
@@ -134,7 +168,7 @@ const ProductsSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
-  bluetooth: Number,
+  bluetooth: String,
   // // Security
   fingerprintSensor: Boolean,
   // // Software
@@ -163,7 +197,7 @@ const ProductsSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
-  weight: Number,
+  weight: String,
   // // Warranty
   warrantyDetails: {
     type: String,
