@@ -10,7 +10,7 @@ const ProductsSchema = mongoose.Schema({
     trim: true,
   },
 
-  url: {
+  slug: {
     type: String,
     trim: true,
   },
