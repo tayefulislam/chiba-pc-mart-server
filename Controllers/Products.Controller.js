@@ -7,7 +7,7 @@ const {
 exports.createProduct = async (req, res) => {
   try {
     const product = req.body;
-    console.log("products", req.body);
+    console.log("product line 10", req.body);
     const result = await createProductService(product);
     res.status(200).json({
       status: "success",

@@ -38,27 +38,11 @@ const ProductsSchema = mongoose.Schema({
   discountPrice: Number,
   regularPrice: Number,
   // Images
-
-  image1: {
-    type: String,
-    trim: true,
-  },
-
-  image2: {
-    type: String,
-    trim: true,
-  },
-
-  image3: {
-    type: String,
-    trim: true,
-  },
-
-  image4: {
-    type: String,
-    trim: true,
-  },
-
+  imageUrls: [
+    {
+      type: String,
+    },
+  ],
   // Processor Section
   processorBrand: {
     type: String,
