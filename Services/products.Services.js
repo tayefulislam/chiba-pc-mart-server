@@ -16,6 +16,5 @@ exports.getProductsService = async () => {
 
 exports.getSingleProductService = async (slugId) => {
   const result = await Products.find({ slug: slugId });
-
   return result;
 };
