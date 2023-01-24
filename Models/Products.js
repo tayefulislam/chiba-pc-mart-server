@@ -52,130 +52,16 @@ const ProductsSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
-  generationOrSeries: String,
-  processorFrequencyMin: Number,
 
-  processorFrequencyMax: Number,
-  processorCore: Number,
-  processTread: Number,
-  cupCache: {
-    type: String,
-    trim: true,
-  },
-  // // Chipset
-  chipsetModel: String,
-  // // Display
-  displaySize: Number,
-  displayResolution: String,
-  displayFeatures: {
-    type: String,
-    trim: true,
-  },
   // // Ram section
   ram: String,
   ramType: String,
-  busSpeed: String,
-  maxRAMCapacity: String,
-  ramRemovable: String,
-  totalRAMSlot: String,
+
   // Storage Section
   storageType: String,
   storageCapacity: String,
-  hddRPM: String,
-  extraM2Slot: String,
-  supportedSSDType: String,
 
-  // // Graphics
-  graphicsModel: {
-    type: String,
-    trim: true,
-  },
-  graphicsMemory: {
-    type: String,
-    trim: true,
-  },
-  // // KeyBoard & Touch Pad
-  keyboardType: {
-    type: String,
-    trim: true,
-  },
-  keyboardFeatures: {
-    type: String,
-    trim: true,
-  },
-  touchPad: String,
-  touchPadFeatures: {
-    type: String,
-    trim: true,
-  },
-  // // Camera and Audio
-  webcam: {
-    type: String,
-    trim: true,
-  },
-  speaker: {
-    type: String,
-    trim: true,
-  },
-  microPhone: {
-    type: String,
-    trim: true,
-  },
-  // // Port & Slots
-  opticalDrive: {
-    type: String,
-    trim: true,
-  },
-  cardReader: {
-    type: String,
-    trim: true,
-  },
-  HDMIPort: {
-    type: String,
-    trim: true,
-  },
-  USB3Port: {
-    type: String,
-    trim: true,
-  },
-  USBTypeCPort_ThunderboltPort: {
-    type: String,
-    trim: true,
-  },
-  headPhone_MicroPhonePort: {
-    type: String,
-    trim: true,
-  },
-  // // Network and Connectivity
-  LAN: String,
-  Wifi: {
-    type: String,
-    trim: true,
-  },
-  bluetooth: String,
-  // // Security
-  fingerprintSensor: Boolean,
-  // // Software
-  Os: {
-    type: String,
-    trim: true,
-  },
-  // //Power #problem 1
-  batteryType: {
-    type: String,
-    trim: true,
-  },
-
-  batteryCapacity: Number,
-  backupTime: {
-    type: String,
-    trim: true,
-  },
-  adapterType: {
-    type: String,
-    trim: true,
-  },
-  // // Physical Specification
+  // Physical Specification
   color: String,
   dimensions: {
     type: String,
